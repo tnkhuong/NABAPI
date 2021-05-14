@@ -1,20 +1,18 @@
-package stepDefinations;
+package stepdefinations;
 
 import apis.APIInit;
-import apis.PostAPIsMethods;
+import apis.endpoints.JsonEndpoint;
 import apis.services.WeatherService;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
 import org.junit.Assert;
 
 import java.io.IOException;
+
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class StepDefination extends APIInit {
 
@@ -37,5 +35,10 @@ public class StepDefination extends APIInit {
     public void body_should_return_the_info(String city) {
         JsonPath js = new JsonPath(response.asString());
         Assert.assertEquals(js.get("name").toString(),city);
+    }
+
+    @Then("Validate schema body return with json file {string}")
+    public void validate_schema_body_return_with_json_file(String filename) {
+        response.then().assertThat().body(matchesJsonSchemaInClasspath(JsonEndpoint.CONTRACTS_DIRECTORY + "\\" + filename));
     }
 }
