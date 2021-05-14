@@ -1,12 +1,12 @@
-package apis;
+package apis.endpoints;
 
-public enum APIResources {
+public enum APIEndpoint {
 
     CurrentWeatherAPI("/data/2.5/weather");
 
     private String resource;
 
-    APIResources(String resource)
+    APIEndpoint(String resource)
     {
         this.resource=resource;
     }
