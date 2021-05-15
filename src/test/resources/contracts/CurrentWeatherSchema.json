@@ -42,7 +42,9 @@
       "type": "object",
       "properties": {
         "temp": {
-          "type": "number"
+          "type": "number",
+          "minimum": 250,
+          "maximum": 320
         },
         "feels_like": {
           "type": "number"
@@ -118,5 +120,6 @@
     "cod": {
       "type": "integer"
     }
-  }
+  },
+  "required": ["id", "name", "coord", "weather", "base", "main", "visibility", "wind", "clouds", "dt", "sys", "timezone","cod"]
 }

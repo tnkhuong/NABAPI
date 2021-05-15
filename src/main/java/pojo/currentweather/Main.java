@@ -1,6 +1,16 @@
-package pojo;
+package pojo.currentweather;
 
 public class Main {
+
+    private float temp;
+    private float feels_like;
+    private float temp_min;
+    private float temp_max;
+    private int pressure;
+    private int humidity;
+    private int sea_level;
+    private int grnd_level;
+
     public float getTemp() {
         return temp;
     }
@@ -49,10 +59,11 @@ public class Main {
         this.humidity = humidity;
     }
 
-    private float temp;
-    private float feels_like;
-    private float temp_min;
-    private float temp_max;
-    private int pressure;
-    private int humidity;
+    public int getSea_level() { return sea_level; }
+
+    public void setSea_level(int sea_level) { this.sea_level = sea_level; }
+
+    public int getGrnd_level() { return grnd_level; }
+
+    public void setGrnd_level(int grnd_level) { this.grnd_level = grnd_level; }
 }
