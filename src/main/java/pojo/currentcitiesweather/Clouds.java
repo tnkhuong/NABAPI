@@ -1,6 +1,9 @@
-package pojo;
+package pojo.currentcitiesweather;
 
 public class Clouds {
+
+    private int all;
+
     public int getAll() {
         return all;
     }
@@ -8,6 +11,4 @@ public class Clouds {
     public void setAll(int all) {
         this.all = all;
     }
-
-    private int all;
 }

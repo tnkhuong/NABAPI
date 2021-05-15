@@ -1,4 +1,4 @@
-package pojo;
+package pojo.currentweather;
 
 public class Coord {
 

@@ -1,13 +1,13 @@
 package apis.endpoints;
 
-public enum APIEndpoint {
+public enum JsonFolder {
 
-    CurrentCityWeather("/data/2.5/weather"),
-    CurrentCitiesWeatherInCircle("/data/2.5/find");
+    Contracts("contracts"),
+    ApiResponse("apiresponses");
 
     private String resource;
 
-    APIEndpoint(String resource)
+    JsonFolder(String resource)
     {
         this.resource=resource;
     }

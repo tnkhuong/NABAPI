@@ -1,10 +1,9 @@
-package pojo;
+package pojo.currentcitiesweather;
 
 public class Wind {
 
     private float speed;
     private int deg;
-    private float gust;
 
     public float getSpeed() {
         return speed;
@@ -20,14 +19,6 @@ public class Wind {
 
     public void setDeg(int deg) {
         this.deg = deg;
-    }
-
-    public float getGust() {
-        return gust;
-    }
-
-    public void setGust(float gust) {
-        this.gust = gust;
     }
 
 }

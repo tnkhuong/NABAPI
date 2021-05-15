@@ -2,28 +2,60 @@ package apis.services;
 
 import apis.APIInit;
 import apis.endpoints.APIEndpoint;
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 import java.io.IOException;
 
-import static io.restassured.RestAssured.given;
-
 public class WeatherService extends APIInit {
 
+    String currentCityWeather = "CurrentCityWeather";
+    String currentCitiesWeatherInCircle = "CurrentCitiesWeatherInCircle";
     APIEndpoint resourceAPI;
 
-    public WeatherService(){
+    public static RequestSpecification Request;
 
+    public WeatherService() throws IOException {
+        Request = RestAssured.given().spec(requestSpecification());
     }
 
-    public Response getWeatherResponse(String city) throws IOException
+    public Response getWeatherResponse(String cityName)
     {
-        resourceAPI = APIEndpoint.valueOf("CurrentWeatherAPI");
+        resourceAPI = APIEndpoint.valueOf("CurrentCityWeather");
+        Request.queryParam("q",cityName);
 
-        return given().spec(requestSpecification())
-                .queryParam("q",city)
-                .queryParam("appid","4ca6724091f531a02d20ec5c742d6db6")
-                .when()
-                .get(resourceAPI.getResource()).then().extract().response();
+        return Request.get(resourceAPI.getResource());
+    }
+
+    public Response getWeatherResponse(String cityName, String stateCode)
+    {
+        resourceAPI = APIEndpoint.valueOf("CurrentCityWeather");
+        String qParam = cityName + "," + stateCode;
+
+        Request.queryParam("q",qParam);
+
+        return Request.get(resourceAPI.getResource());
+    }
+
+    public Response getWeatherResponse(String cityName, String stateCode, String countryCode)
+    {
+        resourceAPI = APIEndpoint.valueOf("CurrentCityWeather");
+
+        String qParam = cityName + "," + stateCode + "," + countryCode;
+
+        Request.queryParam("q",qParam);
+
+        return Request.get(resourceAPI.getResource());
+    }
+
+    public Response getWeatherInCircleResponse(float latNumber, float lonNumber)
+    {
+        resourceAPI = APIEndpoint.valueOf("CurrentCitiesWeatherInCircle");
+
+        Request.queryParam("lat",latNumber)
+                .queryParam("lon",lonNumber);
+
+        return Request.get(resourceAPI.getResource());
     }
 }
