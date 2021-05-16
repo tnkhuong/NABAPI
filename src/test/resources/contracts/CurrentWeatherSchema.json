@@ -42,9 +42,7 @@
       "type": "object",
       "properties": {
         "temp": {
-          "type": "number",
-          "minimum": 250,
-          "maximum": 320
+          "type": "number"
         },
         "feels_like": {
           "type": "number"

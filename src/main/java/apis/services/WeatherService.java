@@ -58,4 +58,15 @@ public class WeatherService extends APIInit {
 
         return Request.get(resourceAPI.getResource());
     }
+
+    public Response getWeatherInCircleResponse(float latNumber, float lonNumber, int numberCity)
+    {
+        resourceAPI = APIEndpoint.valueOf("CurrentCitiesWeatherInCircle");
+
+        Request.queryParam("lat",latNumber)
+                .queryParam("lon",lonNumber)
+                .queryParam("cnt",numberCity);
+
+        return Request.get(resourceAPI.getResource());
+    }
 }
