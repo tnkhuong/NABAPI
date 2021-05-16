@@ -1,5 +1,8 @@
 package pojo.currentweather;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CurrentWeather {
 
     public CurrentWeather(){}
@@ -10,7 +13,7 @@ public class CurrentWeather {
     private Main main;
     private int visibility;
     private Wind wind;
-    private Rain rain;
+//    private Rain rain;
     private Clouds clouds;
     private long dt;
     private Sys sys;
@@ -93,7 +96,7 @@ public class CurrentWeather {
 
     public void setSys(Sys sys) { this.sys = sys; }
 
-    public Rain getRain() { return rain; }
-
-    public void setRain(Rain rain) { this.rain = rain; }
+//    public Rain getRain() { return rain; }
+//
+//    public void setRain(Rain rain) { this.rain = rain; }
 }
