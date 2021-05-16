@@ -35,4 +35,9 @@ public class getSearchCitiesWeatherInCircle extends APIInit {
         CurrentCitiesWeather ccw = response.getBody().as(CurrentCitiesWeather.class);
         Assert.assertEquals(Integer.parseInt(citiesNumber),Arrays.stream(ccw.getList()).count());
     }
+
+    @Then("Should response time less then {string} milliseconds")
+    public void should_return_time_less_then_millisecond(String milliSeconds) {
+        Assert.assertTrue(response.getTime() <= Long.parseLong(milliSeconds));
+    }
 }

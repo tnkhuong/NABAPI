@@ -35,6 +35,12 @@ Feature: Search cities weather
     Then Should return status "400"
     And Should return error message "cnt from 1 to 50"
 
+  @Performance
+  Scenario: Validate response time of api number of cities weather in circle
+
+    When User call search cities weather in circle with lat "55.5" and lon "37.5" with number of city "1"
+    Then Should response time less then "500" milliseconds
+
   @APIContract
   Scenario: Validate return city weather in circle schema body correctly
 

@@ -26,6 +26,12 @@ Feature: Search city weather
         Then Should return status "404"
         And Should return error message "city not found"
 
+    @Performance
+    Scenario: Validate response time of api a city weather
+
+        Given User call searchWeatherAPI with http request for "London" of "US"
+        Then Should response time less then "500" milliseconds
+
     @APIContract
     Scenario: Validate return city weather schema body correctly
 
