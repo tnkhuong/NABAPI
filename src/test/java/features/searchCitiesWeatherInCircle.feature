@@ -36,7 +36,7 @@ Feature: Search cities weather
     And The response payload should return message "cnt from 1 to 50"
 
   @Performance
-  Scenario: Validate the response payload will return time
+  Scenario: Validate the response time acceptable for search cities weather in circle API
 
     When User calls Search Cities weather in circle API with lat "55.5", lon "37.5" and number of city "1"
     Then It should response time less then "500" milliseconds

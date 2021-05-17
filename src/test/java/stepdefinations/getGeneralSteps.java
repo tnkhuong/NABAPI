@@ -34,6 +34,6 @@ public class getGeneralSteps extends APIInit {
     @Then("The response body schema must match with json file {string} for checking the {string}")
     public void the_response_body_schema_must_match_with_json_file_for_checking_the(String filename, String folder) {
         JsonFolder folderPath = JsonFolder.valueOf(folder);
-        response.then().assertThat().body(matchesJsonSchemaInClasspath(folderPath.getResource() + "\\" + filename));
+        response.then().assertThat().body(matchesJsonSchemaInClasspath(folderPath.getResource() + filename));
     }
 }
