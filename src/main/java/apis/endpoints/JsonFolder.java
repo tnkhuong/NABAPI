@@ -2,8 +2,8 @@ package apis.endpoints;
 
 public enum JsonFolder {
 
-    Contracts("contracts"),
-    ApiResponse("apiresponses");
+    Contracts("contracts/"),
+    ApiResponse("apiresponses/");
 
     private String resource;
 

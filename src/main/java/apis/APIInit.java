@@ -39,10 +39,6 @@ public class APIInit {
 		EnvironmentType et = EnvironmentType.valueOf("Stage");
 		String os = System.getProperty("os.name").toLowerCase();
 		String propertiespath = et.getResource();
-		if (os.contains("mac"))
-   		{
-			propertiespath = "src/main/java/apis/stage.properties";
-        }		
 		Properties prop =new Properties();
 		FileInputStream fis =new FileInputStream(propertiespath);
 		prop.load(fis);

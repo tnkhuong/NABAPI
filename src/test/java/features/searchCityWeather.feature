@@ -27,7 +27,7 @@ Feature: Search city weather
         And The response payload should return message "city not found"
 
     @Performance
-    Scenario: Validate response time of api a city weather
+    Scenario: Validate the response time acceptable for search city weather API
 
         When User calls search cities weather API with "London" of "US"
         Then It should response time less then "500" milliseconds
