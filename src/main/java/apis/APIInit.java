@@ -5,6 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Properties;
+
+import apis.endpoints.EnvironmentType;
+import apis.endpoints.JsonFolder;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -33,11 +36,12 @@ public class APIInit {
 
 	public static String getGlobalValue(String key) throws IOException
 	{
+		EnvironmentType et = EnvironmentType.valueOf("Stage");
 		String os = System.getProperty("os.name").toLowerCase();
-		String propertiespath = ".\\src\\main\\java\\apis\\apiglobal.properties";
+		String propertiespath = et.getResource();
 		if (os.contains("mac"))
    		{
-			propertiespath = "src/main/java/apis/apiglobal.properties";
+			propertiespath = "src/main/java/apis/stage.properties";
         }		
 		Properties prop =new Properties();
 		FileInputStream fis =new FileInputStream(propertiespath);
