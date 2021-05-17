@@ -80,12 +80,7 @@
               }
             },
             "rain": {
-              "type": "object",
-              "properties": {
-                "1h": {
-                  "type": "number"
-                }
-              }
+              "type": ["object" , "null"]
             },
             "snow": {
               "type": "null"
