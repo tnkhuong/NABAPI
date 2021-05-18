@@ -1,5 +1,8 @@
 package pojo.currentcitiesweather;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Rain {
 
     public float getH1() {

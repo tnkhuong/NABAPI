@@ -14,7 +14,7 @@ public class List {
     private String dt;
     private Wind wind;
     private Sys sys;
-//    private pojo.currentcitiesweather.Rain rain;
+    private pojo.currentcitiesweather.Rain rain;
     private String snow;
     private Clouds clouds;
     private Weather[] weather;
@@ -75,13 +75,13 @@ public class List {
         this.sys = sys;
     }
 
-//    public pojo.currentcitiesweather.Rain getRain() {
-//        return rain;
-//    }
-//
-//    public void setRain(pojo.currentcitiesweather.Rain rain) {
-//        this.rain = rain;
-//    }
+    public pojo.currentcitiesweather.Rain getRain() {
+        return rain;
+    }
+
+    public void setRain(pojo.currentcitiesweather.Rain rain) {
+        this.rain = rain;
+    }
 
     public String getSnow() {
         return snow;
