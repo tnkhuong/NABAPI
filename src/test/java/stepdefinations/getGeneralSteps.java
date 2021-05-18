@@ -2,10 +2,8 @@ package stepdefinations;
 
 import apis.APIInit;
 import apis.endpoints.JsonFolder;
-import com.sun.xml.internal.ws.commons.xmlutil.Converter;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
-import org.hamcrest.Matchers;
 import org.junit.Assert;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
