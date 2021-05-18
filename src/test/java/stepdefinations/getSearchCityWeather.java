@@ -1,19 +1,14 @@
 package stepdefinations;
 
 import apis.APIInit;
-import apis.endpoints.JsonFolder;
 import apis.services.WeatherService;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import org.junit.Assert;
 import pojo.currentweather.CurrentWeather;
 
 import java.io.IOException;
 
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 

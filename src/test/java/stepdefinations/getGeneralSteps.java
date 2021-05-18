@@ -2,8 +2,10 @@ package stepdefinations;
 
 import apis.APIInit;
 import apis.endpoints.JsonFolder;
+import com.sun.xml.internal.ws.commons.xmlutil.Converter;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -28,7 +30,13 @@ public class getGeneralSteps extends APIInit {
 
     @Then("It should response time less then {string} milliseconds")
     public void it_should_response_time_less_then_milliseconds(String milliSeconds) {
-        Assert.assertTrue(response.getTime() <= Long.parseLong(milliSeconds));
+        if (response.getTime() <= Long.parseLong(milliSeconds)) {
+            Assert.assertTrue(response.getTime() <= Long.parseLong(milliSeconds));
+        }
+        else
+        {
+            Assert.assertEquals(Long.parseLong(milliSeconds), response.getTime());
+        }
     }
 
     @Then("The response body schema must match with json file {string} for checking the {string}")
