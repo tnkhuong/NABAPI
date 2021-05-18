@@ -10,5 +10,4 @@ import org.junit.runner.RunWith;
                         "html:reports/cucumber-report"},
                 glue = {"stepdefinations"})
 public class TestRunner {
-    //, tags = {"@APIContract"}
 }
